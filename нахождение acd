@@ -1,0 +1,49 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ long long itc_len(string str){
+    long long b=0;
+    for(int i=0; str[i]!= '\0'; i++){
+        b++;
+    }
+    return b;
+ }
+
+
+int count_cad(string g){
+    int chechik = 0;
+    int maxi = 0;
+
+    for(int i; i<itc_len(g); i++){
+        if (g[i] == 'C' || g[i] == 'A' || g[i] == 'D')
+            chechik ++;
+        else
+            chechik = 0;
+        if(chechik > maxi)
+                maxi = chechik;
+
+
+
+    }
+
+    return maxi;
+
+}
+
+
+
+
+int main()
+{
+    ifstream file_handler;
+    string data;
+	file_handler.open("k7a-2");
+	file_handler >> data;
+	file_handler.close();
+
+	cout << count_cad(data);
+
+    return 0;
+}
