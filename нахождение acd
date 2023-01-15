@@ -39,7 +39,7 @@ int main()
 {
     ifstream file_handler;
     string data;
-	file_handler.open("k7a-2");
+	file_handler.open("k7a-2.txt");
 	file_handler >> data;
 	file_handler.close();
 
